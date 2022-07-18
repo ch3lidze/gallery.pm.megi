@@ -1,180 +1,139 @@
 *{
-    cursor: pointer;
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     transition: 1.3s;
-    text-transform: capitalize;
+}
+body {
     user-select: none;
-}
-    section{
-        transition: 3s ease;
-        width: 100%;
-        height: 100%;
-        background-color: aqua;
-    }
-
-body{
-transition: 2s ease;
     margin: 0;
     padding: 0;
-    position: relative;
-    /* background-image: linear-gradient(to right, rgb(70, 4, 83),rgb(67, 11, 100),rgb(72, 14, 105),rgb(51, 5, 51)); */
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+    cursor: pointer;
 }
-.prmegitext{
-    display: flex;
-    margin: 0;
-    padding: 0;
+.header {
+    display: grid;
+    place-items: center;
     height: 50px;
     width: 100%;
-    align-items: center;
-    text-align: center;
-     
-     justify-content: center;
-    
 }
-
-.prmegitext h3{
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 5px;
-    color: rgb(0, 15, 255);
-   font-family: cursive;
-   font-weight: bold;
-   border-bottom: 3px solid rgb(0, 0, 255);
-
+.header h3 {
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    font-style: italic;
+    letter-spacing: 2px;
+    color: rgb(0, 0, 0);
 }
-h3::selection{
-    background-color: rgb(177, 19, 19);
-}
-
-.image-gallery{
-    width: 100%;
-    max-width: 950px;
-    margin: 0 auto;
-    padding: 50px 20px;
-    display: flex;
-    flex-direction: column;
-    /* grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    grid-auto-rows: 280px;
-    grid-auto-flow: dense;
-    grid-gap: 20px; */
-}
-
-@media only screen and (min-width: 600px){
-    .image-gallery{
-        width: 100%;
-        max-width: 950px;
+.gallery-content {
+        max-width: 1000px;
         margin: 0 auto;
         padding: 50px 20px;
         display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(290px,2fr));
-        grid-auto-rows: 250px;
+        grid-template-columns: repeat(auto-fit,minmax(200px,2fr));
         grid-auto-flow: dense;
-        grid-gap: 20px;
-    }
+        grid-gap: 20px;     
+}
+.gallery-content .img-box {
+    border: 10px solid rgb(0, 0, 0);
 }
 
-
-
-
-
-
-
-.image-gallery .image-box{
-    position: relative;
-    background-color: rgb(62, 209, 74);
-    border: 10px solid rgb(7, 7, 7);
-}
-.image-gallery .image-box:nth-child(1){
-    border: 10px solid rgb(12, 12, 12);
-}
-.image-gallery .image-box:nth-child(7n + 1){
+.gallery-content .img-box:nth-child(7n + 1) {
     grid-column: span 2;
     grid-row: span 2;
 }
-
-.image-gallery .image-box img{
-    
+.gallery-content .img-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: all 1.5 ease;
-    border:10px solid rgb(188, 204, 132);
-  
 }
-.image-gallery .image-box:nth-child(1) img{
+
+@media only screen and (max-width: 600px){
+    .gallery-content{
+        display: grid;
+        grid-template-columns:auto;
+        grid-gap: 10px;
+        grid-template-columns: repeat((2fr));
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .gallery-content{
+        display: grid;
+        grid-template-columns:auto;
+        grid-gap: 10px;
+        grid-template-columns:  1fr;
+    }
+    .gallery-content .img-box:nth-child(7n + 1) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+.gallery-content .img-box:nth-child(1) img{
     border:10px solid rgb(138, 231, 130);
 }
-
-.image-gallery .image-box:nth-child(2) img{
+.gallery-content .img-box:nth-child(2) img{
     border:10px solid rgb(48, 22, 167);
 }
-.image-gallery .image-box:nth-child(3) img{
+.gallery-content .img-box:nth-child(3) img{
     border:10px solid rgb(219, 96, 143);
 }
-.image-gallery .image-box:nth-child(4) img{
+.gallery-content .img-box:nth-child(4) img{
     border:10px solid rgb(189, 27, 140);
 }
-.image-gallery .image-box:nth-child(5) img{
+.gallery-content .img-box:nth-child(5) img{
     border:10px solid rgb(66, 231, 34);
 }
-.image-gallery .image-box:nth-child(6) img{
+.gallery-content .img-box:nth-child(6) img{
     border:10px solid rgb(49, 93, 158);
 }
-.image-gallery .image-box:nth-child(7) img{
+.gallery-content .img-box:nth-child(7) img{
+    border:10px solid rgb(66, 178, 29);
+}
+.gallery-content .img-box:nth-child(8) img{
     border:10px solid rgb(52, 63, 214);
 }
-.image-gallery .image-box:nth-child(8) img{
-    border:10px solid rgb(52, 63, 214);
-}
-.image-gallery .image-box:nth-child(9) img{
+.gallery-content .img-box:nth-child(9) img{
     border:10px solid rgb(38, 189, 248);
 }
-.image-gallery .image-box:nth-child(10) img{
+.gallery-content .img-box:nth-child(10) img{
     border:10px solid rgb(196, 64, 115);
 }
-.image-gallery .image-box:nth-child(11) img{
+.gallery-content .img-box:nth-child(11) img{
     border:10px solid rgb(124, 6, 167);
 }
-.image-gallery .image-box:nth-child(12) img{
+.gallery-content .img-box:nth-child(12) img{
     border:10px solid rgb(233, 14, 185);
 }
-.image-gallery .image-box:nth-child(13) img{
+.gallery-content .img-box:nth-child(13) img{
     border:10px solid rgb(159, 141, 240);
 }
-.image-gallery .image-box:nth-child(14) img{
+.gallery-content .img-box:nth-child(14) img{
     border:10px solid rgb(231, 96, 186);
 }
-.image-gallery .image-box:nth-child(15) img{
+.gallery-content .img-box:nth-child(15) img{
     border:10px solid rgb(130, 26, 228);
 }
-.image-gallery .image-box:nth-child(16) img{
+.gallery-content .img-box:nth-child(16) img{
     border:10px solid rgb(105, 240, 211);
 }
-.image-gallery .image-box:nth-child(17) img{
+.gallery-content .img-box:nth-child(17) img{
     border:10px solid rgb(228, 123, 74);
 }
-
-
-.image-gallery .image-box:hover img{
-    transform: scale(1.1);
+.gallery-content .img-box:nth-child(18) img{
+    border:10px solid rgb(114, 246, 70);
+}
+.gallery-content .img-box:nth-child(19) img{
+    border:10px solid rgb(33, 186, 241);
 }
 
 
-
-
-::-webkit-scrollbar{
-    background-color: rgb(255, 255, 255);
-    width: 15px;
- 
-   
+::-webkit-scrollbar {
+    width: 16px;
+    box-shadow: inset 8px 0 rgba(0, 0, 0, 0.1);
 }
-::-webkit-scrollbar-track {height: 20px; }
-
-
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
     background: rgba(180, 2, 204, 0.993);
 }
-::-webkit-scrollbar-thumb:hover{
-    background: rgb(88, 3, 74);
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(147, 15, 125);
 }
